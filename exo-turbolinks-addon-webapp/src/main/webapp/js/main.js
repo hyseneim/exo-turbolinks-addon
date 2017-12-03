@@ -11,10 +11,10 @@
 			var $link = $(link);
 			var onclick = $link.attr("onclick");
 			if (!onclick) {
-				var href = $link.attr("href");
-				if (href && href.length > 1 && href.indexOf("Turbolinks") === -1 && href.indexOf("javascript:eXo.webui.UIForm.submitForm") === -1) {
-					$link.attr("href", "javascript:Turbolinks.visit('" + href + "')");	
-				}
+//				var href = $link.attr("href");
+//				if (href && href.length > 1 && href.indexOf("Turbolinks") === -1 && href.indexOf("javascript:eXo.webui.UIForm.submitForm") === -1) {
+//					$link.attr("href", "javascript:Turbolinks.visit('" + href + "')");	
+//				}
 			}
 			else {
 				if ($link.closest(".spaceItem").length > 0) {
