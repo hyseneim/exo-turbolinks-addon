@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<gatein-resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_resources_1_3 http://www.gatein.org/xml/ns/gatein_resources_1_3"
+	xmlns="http://www.gatein.org/xml/ns/gatein_resources_1_3">
+
+	<module>
+		<name>turbolinksIntegrationMain</name>
+		<load-group>turbolinksIntegrationGroup</load-group>
+		<script>
+			<path>
+				/js/vendor/turbolinks.js
+			</path>
+		</script>
+	</module>
+
+	<portlet>
+		<name>TurbolinksIntegrationApplication</name>
+		<module>
+			<script>
+				<path>/js/main.js</path>
+			</script>
+			<depends>
+				<module>jquery</module>
+				<as>$</as>
+			</depends>
+			<depends>
+				<module>turbolinksIntegrationMain</module>
+				<as>turbolinks</as>
+			</depends>
+		</module>
+	</portlet>
+
+</gatein-resources>
