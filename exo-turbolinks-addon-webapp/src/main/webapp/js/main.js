@@ -10,13 +10,7 @@
 		$.each($links, function(index, link) {
 			var $link = $(link);
 			var onclick = $link.attr("onclick");
-			if (!onclick) {
-//				var href = $link.attr("href");
-//				if (href && href.length > 1 && href.indexOf("Turbolinks") === -1 && href.indexOf("javascript:eXo.webui.UIForm.submitForm") === -1) {
-//					$link.attr("href", "javascript:Turbolinks.visit('" + href + "')");	
-//				}
-			}
-			else {
+			if (onclick) {
 				if ($link.closest(".spaceItem").length > 0) {
 					var space = $link.find("> span").data("original-title");
 					$link.attr("onclick", "javascript:Turbolinks.visit('/portal/g/:spaces:" + space + "/" + space + "')");
@@ -46,12 +40,8 @@
 		var self = this;
 		this.transformButtons();
 		this.transformLinks();
-//		$(document).ajaxComplete(function(event) {
-//			self.transformLinks();
-//		});
 		
 		document.addEventListener("turbolinks:load", function(event) {
-//			console.log("LOADED");
 			self.transformButtons();
 			self.transformLinks();
 			self.ensureInputEnabled();
